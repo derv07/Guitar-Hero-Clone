@@ -7,3 +7,4 @@ const NOTE_W = 80
 const NOTE_H = 30
 const NOTE_VY = 5
 const notesDisplay = document.getElementById("notes-display")
+const FRETY = document.getElementById("game").height - 40

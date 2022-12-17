@@ -9,3 +9,5 @@ startBtn.onclick = () => {
     notesDisplay.style.display = 'block'
 }
 
+// TODO: -Reestructurar funcion de presionar las teclas en base si ya esta presionada o no con onKeyEvent(event.type)
+
