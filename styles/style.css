@@ -1,0 +1,15 @@
+canvas {
+    border: 1px solid black;
+    background-color: black;
+    /*background-image: url(/assets/a1669f_1e9f6a27d633476f9bccea05ff1b906b_mv2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;*/
+  }
+
+#notes-display {
+  display: none;
+}
+
+
+
