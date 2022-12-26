@@ -12,6 +12,8 @@ class Note {
         this.img = new Image()
         this.img.src = "/assets/notes.png"
         this.img.frames = 5
+        this.isPressed = false
+
         switch(color) {
             case 'green':
                 this.img.frameIndex = 0

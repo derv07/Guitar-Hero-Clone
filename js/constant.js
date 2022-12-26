@@ -6,5 +6,6 @@ const ORANGE = 75
 const NOTE_W = 80
 const NOTE_H = 30
 const NOTE_VY = 5
-const notesDisplay = document.getElementById("notes-display")
+const comboDisplay = document.getElementById("combo")
+const scoreDisplay = document.getElementById("score")
 const FRETY = document.getElementById("game").height - 40

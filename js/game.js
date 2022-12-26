@@ -18,6 +18,7 @@ class Game {
             this.draw()
             this.move()
             console.log(this.notes.length)
+            console.log(`greenIsPressed: ${this.player.green.isPressed}`)
         }, 1000 / 60)
     }
 
@@ -53,47 +54,73 @@ class Game {
     }
 
     onKeyDown(key) {
-        this.notes.forEach((note) => {
             switch(key) {
                 case GREEN:
-                    this.player.greenFret.frameIndex = 1
-                    if (note.collidesWith(this.player.green)) {
-                        this.player.greenFret.frameIndex = 2
-                        this.player.hitNote(key)
-                        note.isHitted = true
+                    if (!this.player.green.isPressed) {
+                        this.player.greenFret.frameIndex = 1
+                        this.notes = this.notes.filter(note => {
+                            const collides = note.collidesWith(this.player.green)
+                            if (collides) {
+                                this.player.greenFret.frameIndex = 2
+                                this.player.hitNote(key)
+                            }
+                            return !collides
+                        })
                     }
                     break;
                 case RED:
-                    this.player.redFret.frameIndex = 1
-                    if (note.collidesWith(this.player.red)) {
-                        this.player.redFret.frameIndex = 2
-                        this.player.hitNote(key)
-                    }   
+                    if (!this.player.red.isPressed) {
+                        this.player.redFret.frameIndex = 1
+                        this.notes = this.notes.filter(note => {
+                            const collides = note.collidesWith(this.player.red)
+                            if (collides) {
+                                this.player.redFret.frameIndex = 2
+                                this.player.hitNote(key)
+                            }
+                            return !collides
+                        })
+                    }
                     break;
                 case YELLOW:
-                    this.player.yellowFret.frameIndex = 1
-                    if (note.collidesWith(this.player.yellow)) {
-                        this.player.yellowFret.frameIndex = 2
-                        this.player.hitNote(key)
+                    if (!this.player.yellow.isPressed) {
+                        this.player.yellowFret.frameIndex = 1
+                        this.notes = this.notes.filter(note => {
+                            const collides = note.collidesWith(this.player.yellow)
+                            if (collides) {
+                                this.player.yellowFret.frameIndex = 2
+                                this.player.hitNote(key)
+                            }
+                            return !collides
+                        })
                     }
                     break;
                 case BLUE:
-                    this.player.blueFret.frameIndex = 1
-                    if (note.collidesWith(this.player.blue)) {
-                        this.player.blueFret.frameIndex = 2
-                        this.player.hitNote(key)
+                    if (!this.player.blue.isPressed) {
+                        this.player.blueFret.frameIndex = 1
+                        this.notes = this.notes.filter(note => {
+                            const collides = note.collidesWith(this.player.blue)
+                            if (collides) {
+                                this.player.blueFret.frameIndex = 2
+                                this.player.hitNote(key)
+                            }
+                            return !collides
+                        })
                     }
                     break;
                 case ORANGE:
-                    this.player.orangeFret.frameIndex = 1
-                    if (note.collidesWith(this.player.orange)) {
-                        this.player.orangeFret.frameIndex = 2
-                        this.player.hitNote(key)
+                    if (!this.player.orange.isPressed) {
+                        this.player.orangeFret.frameIndex = 1
+                        this.notes = this.notes.filter(note => {
+                            const collides = note.collidesWith(this.player.orange)
+                            if (collides) {
+                                this.player.orangeFret.frameIndex = 2
+                                this.player.hitNote(key)
+                            }
+                            return !collides
+                        })
                     }
                     break;
             }
-        })
-        
     }
 
     onKeyPress(key) {

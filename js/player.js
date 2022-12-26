@@ -67,6 +67,45 @@ class Player {
 
     }
 
+    onKeyDown(key) {
+        switch (key.keyCode) {
+            case GREEN:
+                this.green.isPressed = true
+                break;
+            case RED:
+                this.red.isPressed = true
+                break;
+            case YELLOW:
+                this.yellow.isPressed = true
+                break;
+            case BLUE:
+                this.blue.isPressed = true
+                break;
+            case ORANGE:
+                this.orange.isPressed = true
+                break;
+        }
+    }
+
+   onKeyUp(key) {
+        switch (key.keyCode) {
+            case GREEN:
+                this.green.isPressed = false
+                break;
+            case RED:
+                this.red.isPressed = false
+                break;
+            case YELLOW:
+                this.yellow.isPressed = false
+                break;
+            case BLUE:
+                this.blue.isPressed = false
+                break;
+            case ORANGE:
+                this.orange.isPressed = false
+                break;
+        }
+   }
     
 
     playerScore() {
@@ -80,26 +119,31 @@ class Player {
     hitNote(key) {
         switch (key) {
             case GREEN:  
-                notesDisplay.innerText = `Notes hitted = ${++this.noteHitted}`
+                comboDisplay.innerText = `Combo: ${++this.combo}`
+                scoreDisplay.innerText = `Score: ${this.score += 5}`
                 //note.isHitted = true
                 break;                        
             case RED:
-                notesDisplay.innerText = `Notes hitted = ${++this.noteHitted}`
+                comboDisplay.innerText = `Combo: ${++this.combo}`
+                scoreDisplay.innerText = `Score: ${this.score += 5}`
                 //note.isHitted = true
                 break;
             case YELLOW:                            
-                notesDisplay.innerText = `Notes hitted = ${++this.noteHitted}`
+                comboDisplay.innerText = `Combo: ${++this.combo}`
+                scoreDisplay.innerText = `Score: ${this.score += 5}`
                 //note.isHitted = true
                 break;
             case BLUE:                            
-                notesDisplay.innerText = `Notes hitted = ${++this.noteHitted}`
+                comboDisplay.innerText = `Combo: ${++this.combo}`
+                scoreDisplay.innerText = `Score: ${this.score += 5}`
                 //note.isHitted = true
                 break;
             case ORANGE:                            
-                notesDisplay.innerText = `Notes hitted = ${++this.noteHitted}`
+                comboDisplay.innerText = `Combo: ${++this.combo}`
+                scoreDisplay.innerText = `Score: ${this.score += 5}`
                 //note.isHitted = true
                 break;                
-                }
-}
+            }
+    }
        
 }
