@@ -13,6 +13,12 @@ class Player {
         this.combo = 0
         this.percentHitted = 0
 
+        //Fire effect
+        this.fireEffect = new Image()
+        this.fireEffect.src = "/assets/fireeffect.png"
+        this.fireEffect.frames = 4
+        this.fireEffect.frameIndex = 3
+
         //GREEN NOTE FRET
         this.greenFret = new Image()
         this.greenFret.src = "/assets/greenfret.png"
@@ -117,29 +123,31 @@ class Player {
     }
 
     hitNote(key) {
+        ++this.combo
         switch (key) {
-            case GREEN:  
-                comboDisplay.innerText = `Combo: ${++this.combo}`
+            case GREEN:
+                comboDisplay.innerText = `Combo: ${this.combo.toString().padStart(2, '0')}`
                 scoreDisplay.innerText = `Score: ${this.score += 5}`
+                this.ctx.drawImage(this.fireEffect, this.fireEffect.frameIndex * this.fireEffect.width / this.fireEffect.frames, 0, this.fireEffect.width / this.fireEffect.frames, this.fireEffect.height, this.green.x, FRETY - 20, 50, 50)
                 //note.isHitted = true
                 break;                        
             case RED:
-                comboDisplay.innerText = `Combo: ${++this.combo}`
+                comboDisplay.innerText = `Combo: ${this.combo.toString().padStart(2, '0')}`
                 scoreDisplay.innerText = `Score: ${this.score += 5}`
                 //note.isHitted = true
                 break;
             case YELLOW:                            
-                comboDisplay.innerText = `Combo: ${++this.combo}`
+                comboDisplay.innerText = `Combo: ${this.combo.toString().padStart(2, '0')}`
                 scoreDisplay.innerText = `Score: ${this.score += 5}`
                 //note.isHitted = true
                 break;
             case BLUE:                            
-                comboDisplay.innerText = `Combo: ${++this.combo}`
+                comboDisplay.innerText = `Combo: ${this.combo.toString().padStart(2, '0')}`
                 scoreDisplay.innerText = `Score: ${this.score += 5}`
                 //note.isHitted = true
                 break;
             case ORANGE:                            
-                comboDisplay.innerText = `Combo: ${++this.combo}`
+                comboDisplay.innerText = `Combo: ${this.combo.toString().padStart(2, '0')}`
                 scoreDisplay.innerText = `Score: ${this.score += 5}`
                 //note.isHitted = true
                 break;                

@@ -7,18 +7,19 @@ class Game {
         this.tick = 200
         this.bg = new Background(ctx)
         this.player = new Player(ctx)
+        this.doom = new Audio("/assets/domp3.mp3")
 
     }
 
     start() {
         this.initListeners()
+        this.doom.play()
 
         this.interval = setInterval(() => {
             this.clear()
             this.draw()
             this.move()
             console.log(this.notes.length)
-            console.log(`greenIsPressed: ${this.player.green.isPressed}`)
         }, 1000 / 60)
     }
 
@@ -32,7 +33,6 @@ class Game {
 
     clear() {
         this.ctx.clearRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height)
-        this.notes
     }
 
     move() {

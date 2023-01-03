@@ -9,3 +9,5 @@ const NOTE_VY = 5
 const comboDisplay = document.getElementById("combo")
 const scoreDisplay = document.getElementById("score")
 const FRETY = document.getElementById("game").height - 40
+const gameCanvas = document.getElementById("game")
+const title = document.getElementById("title")
