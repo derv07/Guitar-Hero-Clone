@@ -18,6 +18,7 @@ class Player {
         this.fireEffect.src = "/assets/fireeffect.png"
         this.fireEffect.frames = 4
         this.fireEffect.frameIndex = 3
+        this.fireEffect.tick = 0
 
         //GREEN NOTE FRET
         this.greenFret = new Image()
@@ -51,26 +52,15 @@ class Player {
     }
 
     draw() {
-        this.ctx.strokeStyle = 'red'
-        this.ctx.strokeRect(this.green.x, FRETY, 80, 40)
         this.ctx.drawImage(this.greenFret, 0, this.greenFret.frameIndex * this.greenFret.height / this.greenFret.frames, this.greenFret.width, this.greenFret.height / this.greenFret.frames, this.green.x, FRETY, 80, 40)
-        
-        this.ctx.strokeStyle = 'red'
-        this.ctx.strokeRect(this.red.x, FRETY, 80, 40)
+    
         this.ctx.drawImage(this.redFret, 0, this.redFret.frameIndex * this.redFret.height / this.redFret.frames, this.redFret.width, this.redFret.height / this.redFret.frames, this.red.x, FRETY, 80, 40)
 
-        this.ctx.strokeStyle = 'red'
-        this.ctx.strokeRect(this.yellow.x, FRETY, 80, 40)
         this.ctx.drawImage(this.yellowFret, 0, this.yellowFret.frameIndex * this.yellowFret.height / this.yellowFret.frames, this.yellowFret.width, this.yellowFret.height / this.yellowFret.frames, this.yellow.x, FRETY, 80, 40)
 
-        this.ctx.strokeStyle = 'red'
-        this.ctx.strokeRect(this.blue.x, FRETY, 80, 40)
         this.ctx.drawImage(this.blueFret, 0, this.blueFret.frameIndex * this.blueFret.height / this.blueFret.frames, this.blueFret.width, this.blueFret.height / this.blueFret.frames, this.blue.x, FRETY, 80, 40)
 
-        this.ctx.strokeStyle = 'red'
-        this.ctx.strokeRect(this.orange.x, FRETY, 80, 40)
         this.ctx.drawImage(this.orangeFret, 0, this.orangeFret.frameIndex * this.orangeFret.height / this.orangeFret.frames, this.orangeFret.width, this.orangeFret.height / this.orangeFret.frames, this.orange.x, FRETY, 80, 40)
-
     }
 
     onKeyDown(key) {
@@ -122,13 +112,16 @@ class Player {
 
     }
 
+    animateRed() {
+        this.ctx.drawImage(this.fireEffect, this.fireEffect.frameIndex * this.fireEffect.width / this.fireEffect.frames, 0, this.fireEffect.width / this.fireEffect.frames, this.fireEffect.height, this.red.x, FRETY - 20, 50, 50)
+    }
+
     hitNote(key) {
         ++this.combo
         switch (key) {
             case GREEN:
                 comboDisplay.innerText = `Combo: ${this.combo.toString().padStart(2, '0')}`
                 scoreDisplay.innerText = `Score: ${this.score += 5}`
-                this.ctx.drawImage(this.fireEffect, this.fireEffect.frameIndex * this.fireEffect.width / this.fireEffect.frames, 0, this.fireEffect.width / this.fireEffect.frames, this.fireEffect.height, this.green.x, FRETY - 20, 50, 50)
                 //note.isHitted = true
                 break;                        
             case RED:
@@ -153,5 +146,7 @@ class Player {
                 break;                
             }
     }
+
+    
        
 }

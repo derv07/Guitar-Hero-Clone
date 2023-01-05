@@ -8,7 +8,10 @@ class Game {
         this.bg = new Background(ctx)
         this.player = new Player(ctx)
         this.doom = new Audio("/assets/domp3.mp3")
+        this.fret = []
+        this.tick = 0
 
+        
     }
 
     start() {
@@ -17,14 +20,21 @@ class Game {
 
         this.interval = setInterval(() => {
             this.clear()
+            this.addFret()
             this.draw()
             this.move()
-            console.log(this.notes.length)
+            this.endSong()
         }, 1000 / 60)
+    }
+
+    stop() {
+        clearInterval(this.interval)
+        this.doom.pause()
     }
 
     draw() {
         this.bg.draw()
+        this.fret.forEach(f => f.draw())
         this.notes.forEach((note) => {
             note.draw()
         })
@@ -35,10 +45,27 @@ class Game {
         this.ctx.clearRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height)
     }
 
+    endSong() {
+        if (this.doom.currentTime >= 56.9) {
+            this.doom.pause()
+            clearInterval(this.interval)
+        }
+    }
+
+    addFret() {
+        this.tick++
+
+        if (this.tick >= 52) {
+            this.tick = 0
+            this.fret.push(new Fret(this.ctx))
+        }
+    }
+
     move() {
         this.notes.forEach((note) => {
             note.move()
         })
+        this.fret.forEach(f => f.move())
     }
 
     initListeners() {
@@ -52,6 +79,8 @@ class Game {
             this.onKeyUp(key.keyCode)
         }
     }
+
+    
 
     onKeyDown(key) {
             switch(key) {
@@ -76,6 +105,7 @@ class Game {
                             if (collides) {
                                 this.player.redFret.frameIndex = 2
                                 this.player.hitNote(key)
+                                this.player.animateRed()
                             }
                             return !collides
                         })
