@@ -5,6 +5,7 @@ const startBtn = document.getElementById("start-btn")
 startBtn.onclick = () => {
     const game = new Game(ctx)
     game.start()
+    document.getElementById("instruction").style.display = "none"
     gameCanvas.style.display = "block"
     comboDisplay.style.display = "block"
     scoreDisplay.style.display = "block"
