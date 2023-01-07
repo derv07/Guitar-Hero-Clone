@@ -24,7 +24,7 @@ p {
 }
 
 body {
-  background-image: url(assets/diogo-azambuja-final-render-01-software.jpg);
+  background-image: url(../assets/diogo-azambuja-final-render-01-software.jpg);
   background-size:cover;
   background-repeat: no-repeat;
   display: flex;
@@ -40,7 +40,7 @@ body {
 
 @font-face {
   font-family: "Nightmare Hero";
-  src: url(assets/Nightmare_Hero_Normal.ttf) format("truetype");
+  src: url(../assets/Nightmare_Hero_Normal.ttf) format("truetype");
 }
 
 #title {
