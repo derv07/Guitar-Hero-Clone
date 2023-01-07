@@ -16,38 +16,38 @@ class Player {
 
         //Fire effect
         this.fireEffect = new Image()
-        this.fireEffect.src = "../assets/fireeffect.png"
+        this.fireEffect.src = "assets/fireeffect.png"
         this.fireEffect.frames = 4
         this.fireEffect.frameIndex = 3
         this.fireEffect.tick = 0
 
         //GREEN NOTE FRET
         this.greenFret = new Image()
-        this.greenFret.src = "../assets/greenfret.png"
+        this.greenFret.src = "assets/greenfret.png"
         this.greenFret.frames = 3
         this.greenFret.frameIndex = 0
 
         //RED NOTE FRET
         this.redFret = new Image()
-        this.redFret.src = "../assets/redfret.png"
+        this.redFret.src = "assets/redfret.png"
         this.redFret.frames = 3
         this.redFret.frameIndex = 0
 
         //YELLOW NOTE FRET
         this.yellowFret = new Image()
-        this.yellowFret.src = "../assets/yellowfret.png"
+        this.yellowFret.src = "assets/yellowfret.png"
         this.yellowFret.frames = 3
         this.yellowFret.frameIndex = 0
 
         //BLUE NOTE FRET
         this.blueFret = new Image()
-        this.blueFret.src = "../assets/bluefret.png"
+        this.blueFret.src = "assets/bluefret.png"
         this.blueFret.frames = 3
         this.blueFret.frameIndex = 0
 
         // ORANGE NOTE FRET
         this.orangeFret = new Image()
-        this.orangeFret.src = "../assets/orangefret.png"
+        this.orangeFret.src = "assets/orangefret.png"
         this.orangeFret.frames = 3
         this.orangeFret.frameIndex = 0
     }

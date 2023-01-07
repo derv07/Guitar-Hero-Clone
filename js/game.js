@@ -7,7 +7,7 @@ class Game {
         this.tick = 200
         this.bg = new Background(ctx)
         this.player = new Player(ctx)
-        this.doom = new Audio("../assets/domp3.mp3")
+        this.doom = new Audio("assets/domp3.mp3")
         this.highestStreak = 0
         this.noteMissed = 0
         this.fret = []
