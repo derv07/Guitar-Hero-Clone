@@ -10,7 +10,7 @@ class Note {
         this.isHittable = false
         this.isHitted = false
         this.img = new Image()
-        this.img.src = "/assets/notes.png"
+        this.img.src = "../assets/notes.png"
         this.img.frames = 5
         this.isPressed = false
 
