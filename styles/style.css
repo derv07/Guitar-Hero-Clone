@@ -8,7 +8,10 @@ canvas {
   }
 
 
-
+p {
+  color: white;
+  font-size: 20px;
+}
 #container {
   display: flex;
   flex-direction: row;
@@ -16,7 +19,7 @@ canvas {
 
 }
 
-#game, #combo, #score {
+#game, #combo, #score, #multiplier {
   display: none;
 }
 
@@ -30,7 +33,7 @@ body {
   align-items: center;  
 }
 
-#combo, #score {
+#combo, #score, #multiplier, #finalscore, #higheststreak, #notemissed, #percent {
   font-size: 35px;
   color: white;
 }
@@ -53,7 +56,13 @@ body {
   width: 33vw;
 }
 
-#start-btn {
+.endScore {
+  height: 90vh;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#start-btn, #restart-btn {
   border: none;
   font-size: 40px;
   background-color: black;
@@ -62,7 +71,7 @@ body {
   border-radius: 10px;
 }
 
-#start-btn:hover {
+#start-btn:hover, #restart-btn:hover {
   background-color: orange;
   color: black;
 }

@@ -9,7 +9,8 @@ class Player {
         this.orange = new Note (ctx, 410, FRETY, 'orange', 40)
 
         this.score = 0
-        this.noteHitted = 0
+        this.multiplier = [1, 1.25, 1.5, 1.75, 2]
+        this.multiplierHit = 0
         this.combo = 0
         this.percentHitted = 0
 
@@ -112,36 +113,44 @@ class Player {
 
     }
 
-    animateRed() {
-        this.ctx.drawImage(this.fireEffect, this.fireEffect.frameIndex * this.fireEffect.width / this.fireEffect.frames, 0, this.fireEffect.width / this.fireEffect.frames, this.fireEffect.height, this.red.x, FRETY - 20, 50, 50)
-    }
-
     hitNote(key) {
         ++this.combo
+        if (this.combo % 5 === 0 && this.multiplierHit < 4 && this.combo > 0) {
+            this.multiplierHit++
+        }
         switch (key) {
             case GREEN:
-                comboDisplay.innerText = `Combo: ${this.combo.toString().padStart(2, '0')}`
-                scoreDisplay.innerText = `Score: ${this.score += 5}`
+                comboDisplay.innerText = `Streak: ${this.combo}`
+                scoreDisplay.innerText = `Score: ${this.score += 5 * this.multiplier[this.multiplierHit]}`
+                multiplierDisplay.innerText = `Combo: x${this.multiplier[this.multiplierHit]}`
                 //note.isHitted = true
                 break;                        
             case RED:
-                comboDisplay.innerText = `Combo: ${this.combo.toString().padStart(2, '0')}`
-                scoreDisplay.innerText = `Score: ${this.score += 5}`
+                comboDisplay.innerText = `Streak: ${this.combo}`
+                scoreDisplay.innerText = `Score: ${this.score += 5 * this.multiplier[this.multiplierHit]}`
+                multiplierDisplay.innerText = `Combo: x${this.multiplier[this.multiplierHit]}`
+
                 //note.isHitted = true
                 break;
             case YELLOW:                            
-                comboDisplay.innerText = `Combo: ${this.combo.toString().padStart(2, '0')}`
-                scoreDisplay.innerText = `Score: ${this.score += 5}`
+                comboDisplay.innerText = `Streak: ${this.combo}`
+                scoreDisplay.innerText = `Score: ${this.score += 5 * this.multiplier[this.multiplierHit]}`
+                multiplierDisplay.innerText = `Combo: x${this.multiplier[this.multiplierHit]}`
+
                 //note.isHitted = true
                 break;
             case BLUE:                            
-                comboDisplay.innerText = `Combo: ${this.combo.toString().padStart(2, '0')}`
-                scoreDisplay.innerText = `Score: ${this.score += 5}`
+                comboDisplay.innerText = `Streak: ${this.combo}`
+                scoreDisplay.innerText = `Score: ${this.score += 5 * this.multiplier[this.multiplierHit]}`
+                multiplierDisplay.innerText = `Combo: x${this.multiplier[this.multiplierHit]}`
+
                 //note.isHitted = true
                 break;
-            case ORANGE:                            
-                comboDisplay.innerText = `Combo: ${this.combo.toString().padStart(2, '0')}`
-                scoreDisplay.innerText = `Score: ${this.score += 5}`
+            case ORANGE:                           
+                comboDisplay.innerText = `Streak: ${this.combo}`
+                scoreDisplay.innerText = `Score: ${this.score += 5 * this.multiplier[this.multiplierHit]}`
+                multiplierDisplay.innerText = `Combo: x${this.multiplier[this.multiplierHit]}`
+
                 //note.isHitted = true
                 break;                
             }

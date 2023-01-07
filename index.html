@@ -4,27 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/styles/style.css" rel="stylesheet">
+    <link href="./styles/style.css" rel="stylesheet">
     <title>Guitar Hero Clone</title>
 </head>
 <body>
     <h1 id="title">Dani's Guitar Hero</h1>
+    <p>Instructions: The player must hit the highest amount of notes to achieve a higher score using <span>A´s key </span>
+    </p>
     <button id="start-btn">START</button>
     <div id="container">
         <canvas id="game" width="500px" height="700px"></canvas>
         <div id="scoreboard">
-            <h1 id="combo">Combo: 00</h1>
+            <h1 id="combo">Streak: 0</h1>
             <h1 id="score">Score: 0</h1>
-           
+            <h1 id="multiplier">Combo: x1</h1>
+        </div>        
+    </div>
+    <div id="endscore">
+        <h1 id="finalscore"></h1>
+        <h1 id="higheststreak"></h1>
+        <h1 id="notemissed"></h1>
+        <h1 id="percent"></h1>
+        <button id="restart-btn">START</button>
     </div>
 
-    <script src="/js/constant.js"></script>
-    <script src="/js/background.js"></script>
-    <script src="/js/fret.js"></script>
-    <script src="/js/note.js"></script>
-    <script src="/song/barracuda.js"></script>
-    <script src="/js/player.js"></script>
-    <script src="/js/game.js"></script>
-    <script src="/js/script.js"></script>
+    <script src="./js/constant.js"></script>
+    <script src="./js/background.js"></script>
+    <script src="./js/fret.js"></script>
+    <script src="js/note.js"></script>
+    <script src="./song/barracuda.js"></script>
+    <script src="js/player.js"></script>
+    <script src="./js/game.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 </html>

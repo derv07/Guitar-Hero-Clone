@@ -42,6 +42,10 @@ class Note {
         this.y += this.vy
     }
 
+    isVisible() {
+        return this.y < 706
+    }
+
     collidesWith(fret) {
         if (this.x < fret.x + fret.w &&
             this.x + this. w > fret.x &&

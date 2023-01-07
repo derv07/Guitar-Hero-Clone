@@ -1,17 +1,38 @@
 const canvas = document.getElementById("game")
 const ctx = canvas.getContext("2d")
 
-const game = new Game(ctx)
-
 const startBtn = document.getElementById("start-btn")
 startBtn.onclick = () => {
+    const game = new Game(ctx)
     game.start()
     gameCanvas.style.display = "block"
     comboDisplay.style.display = "block"
     scoreDisplay.style.display = "block"
+    multiplierDisplay.style.display = "block"
     startBtn.style.display = "none"
     title.style.display = "none"
 }
 
-// TODO: -Reestructurar funcion de presionar las teclas en base si ya esta presionada o no con onKeyEvent(event.type)
+const restartBtn = document.getElementById("restart-btn")
+restartBtn.style.display = "none"
+endScore.style.display = "none"
+restartBtn.onclick = () => {
+    const game = new Game(ctx)
+    game.start()
+    gameCanvas.style.display = "block"
+    comboDisplay.style.display = "block"
+    scoreDisplay.style.display = "block"
+    multiplierDisplay.style.display = "block"
+    restartBtn.style.display = "none"
+    title.style.display = "none"
+    endScore.style.display = "none"
+    endScore.classList.remove("endScore")
+    container.style.display = "flex"
+    scoreDisplay.innerText = "Score: 0"
+    comboDisplay.innerText = "Streak: 0"
+    multiplierDisplay.innerText = "Combo: x1"
+}
+
+
+
 
