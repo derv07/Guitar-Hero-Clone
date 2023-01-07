@@ -10,13 +10,33 @@ canvas {
 
 p {
   color: white;
-  font-size: 20px;
+  font-size: 23px;
 }
 #container {
   display: flex;
   flex-direction: row;
   align-items: center;
 
+}
+
+#green {
+  color: green
+}
+
+#red {
+  color: red
+}
+
+#yellow {
+  color: yellow
+}
+
+#blue {
+  color: blue
+}
+
+#orange {
+  color: orange
 }
 
 #game, #combo, #score, #multiplier {
